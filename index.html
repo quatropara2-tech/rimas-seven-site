@@ -1,161 +1,1314 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#174b35">
-<meta name="description" content="ريماس سيفن - تعاونية فلاحية لتثمين المنتوجات المجالية بتارودانت">
-<title>ريماس سيفن | منتوجات مجالية مغربية</title>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-<style>
-:root{--g:#174b35;--g2:#286b49;--r:#b83a3a;--bg:#fbfaf6;--ink:#202820;--muted:#68736b;--line:#e7e9e2}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:'Cairo',Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.8}
-a{text-decoration:none;color:inherit}
-button,input,select,textarea{font:inherit}
-.container{width:min(1120px,92%);margin:auto}
-.top{background:var(--g);color:white;text-align:center;padding:7px;font-size:13px}
-header{position:sticky;top:0;background:#fff;z-index:10;box-shadow:0 3px 18px #0000000d}
-nav{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap;padding:10px 0}
-.brand{display:flex;align-items:center;gap:10px}
-.logo{width:53px;height:53px;border:2px solid var(--g);border-radius:50%;display:grid;place-items:center;font-size:27px}
-.brand strong{display:block;color:var(--g);font-size:22px;line-height:1.4}
-.brand small{display:block;color:var(--r);font-weight:bold;font-size:11px}
-.links{display:flex;gap:18px;font-weight:bold;font-size:14px}
-.links a:hover{color:var(--r)}
-.btn{display:inline-block;background:var(--g);color:white;border:0;border-radius:10px;padding:11px 18px;font-weight:bold;cursor:pointer;text-align:center}
-.btn.red{background:var(--r)}
-.hero{padding:75px 0;color:white;background:linear-gradient(100deg,#103b29ed,#174b35d9),url('https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1600&q=80') center/cover}
-.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:35px;align-items:center}
-.tag{display:inline-block;border:1px solid #ffffff66;border-radius:30px;padding:5px 14px;font-size:13px}
-h1{font-size:clamp(32px,5vw,54px);line-height:1.4;margin:18px 0}
-h1 span{color:#f1c4bf}
-.hero p{color:#edf3ed;max-width:650px}
-.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
-.btn.white{background:white;color:var(--g)}
-.hero-card{background:#ffffffef;color:var(--ink);padding:25px;border-radius:22px}
-.hero-card h2{color:var(--g);margin-top:0}
-.hero-card p{color:var(--muted)}
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.stat{background:#edf3eb;padding:10px 4px;border-radius:10px;text-align:center}
-.stat b{display:block;color:var(--g)}
-.stat small{font-size:11px;color:var(--muted)}
-section{padding:65px 0}
-.heading{text-align:center;max-width:720px;margin:0 auto 32px}
-.heading span{color:var(--r);font-weight:bold}
-.heading h2{color:var(--g);font-size:30px;margin:4px 0}
-.heading p{color:var(--muted);margin:0}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px;align-items:center}
-.panel{background:white;border:1px solid var(--line);border-radius:18px;padding:25px}
-.panel h3{color:var(--g)}
-.panel li{margin:8px 0}
-.seal-area{min-height:300px;border-radius:20px;background:linear-gradient(140deg,#e6efe4,#f7e7e4);display:grid;place-items:center}
-.seal{width:205px;height:205px;border:3px solid var(--g);border-radius:50%;background:#ffffffdf;display:grid;place-items:center;text-align:center;color:var(--g);padding:20px}
-.seal b{display:block;font-size:25px}
-.seal span{color:var(--r);font-weight:bold}
-.products{background:#f2f5ef}
-.filters{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-bottom:25px}
-.filter{border:1px solid #dce4da;background:white;color:var(--g);padding:8px 14px;border-radius:25px;cursor:pointer;font-weight:bold}
-.filter.active{background:var(--g);color:white}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.product{background:white;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 7px 22px #173d2508}
-.product-top{height:115px;display:grid;place-items:center;background:linear-gradient(135deg,#e9f0e7,#f9ece8);font-size:48px}
-.product-body{padding:17px;display:flex;flex-direction:column;flex:1}
-.product h3{font-size:17px;color:var(--g);margin:0 0 6px}
-.product p{font-size:13px;color:var(--muted);margin:0 0 12px}
-.prices{display:flex;flex-wrap:wrap;gap:6px;margin:auto 0 14px}
-.price{background:#f1f5ef;border-radius:7px;padding:4px 7px;font-size:12px}
-.price b{color:var(--r)}
-.product .btn{width:100%;padding:9px}
-.note{text-align:center;color:var(--muted);font-size:13px;margin-top:22px}
-.values{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.value{background:white;border:1px solid var(--line);border-radius:15px;padding:20px}
-.value h3{color:var(--g)}
-.value p{color:var(--muted);font-size:14px}
-.contact{background:var(--g);color:white}
-.contact .heading h2{color:white}
-.contact .heading p{color:#dce9df}
-.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:22px}
-.contact-card{border:1px solid #ffffff38;background:#ffffff0d;border-radius:17px;padding:24px}
-.contact-card h3{margin-top:0}
-.contact-line{padding:12px 0;border-bottom:1px solid #ffffff30}
-.form{background:white;color:var(--ink);border-radius:17px;padding:23px}
-.form label{display:block;font-weight:bold;margin:10px 0 4px}
-.form input,.form select,.form textarea{width:100%;border:1px solid #dce2da;border-radius:9px;padding:10px;background:#fcfcfa}
-.form textarea{min-height:80px}
-.form button{width:100%;margin-top:15px}
-footer{background:#103b29;color:#dce9df;text-align:center;padding:24px 10px;font-size:13px}
-.whatsapp{position:fixed;bottom:16px;left:14px;background:#1ca65c;color:white;border-radius:30px;padding:11px 16px;font-weight:bold;z-index:20;box-shadow:0 5px 20px #0002}
-@media(max-width:800px){.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}.hero{padding:48px 0}.links{gap:12px}}
-@media(max-width:540px){nav{justify-content:center}.brand{margin-left:auto;margin-right:auto}.links{width:100%;justify-content:space-around;font-size:12px;gap:5px}.nav-btn{display:none}.grid,.values{grid-template-columns:1fr}.hero h1{font-size:32px}section{padding:45px 0}.heading h2{font-size:25px}.hero-card{padding:19px}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#174b35">
+  <meta name="description" content="ريماس سيفن - تعاونية فلاحية مغربية متخصصة في تثمين المنتوجات المجالية، أملو، زيت أركان، زيت الزيتون والزعفران.">
+  <title>ريماس سيفن | منتوجات مجالية مغربية</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --green: #174b35;
+      --green-dark: #103522;
+      --green-light: #edf5ee;
+      --red: #c83b3b;
+      --cream: #fffdf8;
+      --text: #24332a;
+      --muted: #69756d;
+      --border: #e6ebe5;
+      --white: #fff;
+      --shadow: 0 10px 35px rgba(23,75,53,.08);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.8;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    button, input, select, textarea {
+      font: inherit;
+    }
+
+    button, .btn {
+      cursor: pointer;
+    }
+
+    .container {
+      width: min(1160px, 92%);
+      margin: auto;
+    }
+
+    .topbar {
+      background: var(--green-dark);
+      color: #fff;
+      text-align: center;
+      padding: 7px 12px;
+      font-size: 13px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,253,248,.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+
+    .navbar {
+      min-height: 82px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      flex-shrink: 0;
+    }
+
+    .brand-symbol {
+      width: 54px;
+      height: 54px;
+      border: 2px solid var(--green);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--green);
+      font-size: 27px;
+      background: #fff;
+    }
+
+    .brand-name {
+      font-size: 25px;
+      line-height: 1.35;
+      font-weight: 900;
+      color: var(--green);
+    }
+
+    .brand-name span {
+      color: var(--red);
+    }
+
+    .brand-sub {
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: .2px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    nav a:hover {
+      color: var(--red);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 0;
+      border-radius: 9px;
+      padding: 12px 21px;
+      font-weight: 800;
+      transition: .2s ease;
+    }
+
+    .btn-green {
+      color: #fff;
+      background: var(--green);
+    }
+
+    .btn-green:hover {
+      background: var(--green-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-red {
+      background: var(--red);
+      color: white;
+    }
+
+    .btn-red:hover {
+      background: #a92c2c;
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,.65);
+      color: #fff;
+      background: transparent;
+    }
+
+    .hero {
+      position: relative;
+      color: #fff;
+      padding: 82px 0;
+      background:
+        linear-gradient(90deg, rgba(16,53,34,.92), rgba(23,75,53,.76)),
+        url('https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=1800&q=85')
+        center/cover no-repeat;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      max-width: 720px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 13px;
+      border: 1px solid rgba(255,255,255,.35);
+      background: rgba(255,255,255,.09);
+      border-radius: 30px;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 55px);
+      line-height: 1.45;
+      margin-bottom: 17px;
+      font-weight: 900;
+    }
+
+    .hero h1 span {
+      color: #f5c8b9;
+    }
+
+    .hero p {
+      max-width: 650px;
+      color: #edf4ee;
+      font-size: 16px;
+      margin-bottom: 27px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .trust-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: -28px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .trust-item {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      padding: 19px 15px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .trust-item strong {
+      display: block;
+      color: var(--green);
+      font-size: 16px;
+    }
+
+    .trust-item span {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    section {
+      padding: 76px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 35px;
+    }
+
+    .section-heading .overline {
+      color: var(--red);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .section-heading h2 {
+      color: var(--green);
+      font-size: clamp(26px, 4vw, 36px);
+      line-height: 1.5;
+      margin: 5px 0 10px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-photo {
+      height: 390px;
+      overflow: hidden;
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      background: var(--green-light);
+    }
+
+    .about-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .about-text h2 {
+      color: var(--green);
+      font-size: 30px;
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 13px;
+      font-size: 14px;
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .feature {
+      background: var(--green-light);
+      border-radius: 10px;
+      padding: 13px;
+      font-weight: 800;
+      color: var(--green);
+      font-size: 13px;
+    }
+
+    .products-section {
+      background: #f5f8f3;
+    }
+
+    .filters {
+      display: flex;
+      justify-content: center;
+      gap: 9px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .filter-btn {
+      background: white;
+      border: 1px solid var(--border);
+      color: var(--green);
+      border-radius: 25px;
+      padding: 8px 17px;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--green);
+      color: white;
+      border-color: var(--green);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .product {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 7px 22px rgba(23,61,37,.04);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 30px rgba(23,61,37,.12);
+    }
+
+    .product-image {
+      height: 210px;
+      background: #edf2e9;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .4s ease;
+    }
+
+    .product:hover .product-image img {
+      transform: scale(1.05);
+    }
+
+    .product-tag {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: white;
+      color: var(--green);
+      border-radius: 30px;
+      padding: 4px 11px;
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .product-body {
+      padding: 19px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .product h3 {
+      color: var(--green);
+      font-size: 17px;
+      line-height: 1.7;
+      margin-bottom: 7px;
+    }
+
+    .product-desc {
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 14px;
+      min-height: 43px;
+    }
+
+    .price-list {
+      border-top: 1px solid var(--border);
+      padding-top: 12px;
+      margin-top: auto;
+    }
+
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      padding: 3px 0;
+    }
+
+    .price-row span {
+      color: var(--muted);
+    }
+
+    .price-row strong {
+      color: var(--green);
+      white-space: nowrap;
+    }
+
+    .product .order-btn {
+      margin-top: 15px;
+      width: 100%;
+      font-size: 13px;
+    }
+
+    .note {
+      margin-top: 23px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .value-card {
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      padding: 25px;
+      background: white;
+    }
+
+    .value-icon {
+      font-size: 30px;
+      margin-bottom: 12px;
+    }
+
+    .value-card h3 {
+      color: var(--green);
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+
+    .value-card p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .contact-section {
+      background: var(--green-dark);
+      color: white;
+    }
+
+    .contact-section .section-heading h2 {
+      color: white;
+    }
+
+    .contact-section .section-heading p {
+      color: #d8e5db;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .contact-info {
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 17px;
+      padding: 25px;
+    }
+
+    .contact-info h3 {
+      font-size: 21px;
+      margin-bottom: 15px;
+    }
+
+    .contact-line {
+      padding: 13px 0;
+      border-bottom: 1px solid rgba(255,255,255,.13);
+      font-size: 14px;
+    }
+
+    .contact-line:last-child {
+      border-bottom: 0;
+    }
+
+    .contact-line small {
+      display: block;
+      color: #c8d9cc;
+      font-size: 11px;
+    }
+
+    .contact-line a {
+      color: white;
+      font-weight: 800;
+      direction: ltr;
+      unicode-bidi: embed;
+      display: inline-block;
+    }
+
+    .order-form {
+      background: white;
+      color: var(--text);
+      border-radius: 17px;
+      padding: 25px;
+    }
+
+    .order-form h3 {
+      color: var(--green);
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
+
+    .form-intro {
+      color: var(--muted);
+      font-size: 12px;
+      margin-bottom: 18px;
+    }
+
+    .field {
+      margin-bottom: 14px;
+    }
+
+    .field label {
+      display: block;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 5px;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      padding: 11px 12px;
+      border: 1px solid #dce5dc;
+      border-radius: 9px;
+      background: #fff;
+      color: var(--text);
+      outline: none;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--green);
+    }
+
+    .field textarea {
+      resize: vertical;
+      min-height: 85px;
+    }
+
+    .order-form .btn {
+      width: 100%;
+    }
+
+    .form-message {
+      margin-top: 12px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .footer {
+      background: #0c291a;
+      color: #e3ece5;
+      padding: 28px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer strong {
+      color: white;
+      font-size: 18px;
+    }
+
+    .footer p {
+      color: #bdcfc1;
+      font-size: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 17px;
+      font-size: 12px;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      left: 18px;
+      bottom: 18px;
+      z-index: 80;
+      background: #20b95a;
+      color: white;
+      padding: 12px 17px;
+      border-radius: 40px;
+      box-shadow: 0 7px 24px rgba(0,0,0,.2);
+      font-weight: 900;
+      font-size: 13px;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 900px) {
+      nav {
+        gap: 12px;
+        font-size: 12px;
+      }
+
+      .navbar > .btn {
+        display: none;
+      }
+
+      .product-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-photo {
+        height: 320px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+        min-height: 72px;
+        flex-wrap: wrap;
+        padding: 10px 0;
+        gap: 8px;
+      }
+
+      .brand-symbol {
+        width: 45px;
+        height: 45px;
+        font-size: 23px;
+      }
+
+      .brand-name {
+        font-size: 21px;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: center;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 4px 0;
+      }
+
+      nav a {
+        flex-shrink: 0;
+      }
+
+      .hero {
+        padding: 60px 0 72px;
+        background-position: center;
+      }
+
+      .hero p {
+        font-size: 14px;
+      }
+
+      .hero-buttons .btn {
+        width: 100%;
+      }
+
+      .trust-strip {
+        grid-template-columns: 1fr;
+        margin-top: -18px;
+        gap: 9px;
+      }
+
+      .trust-item {
+        padding: 12px;
+      }
+
+      section {
+        padding: 54px 0;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr;
+        gap: 17px;
+      }
+
+      .product-image {
+        height: 235px;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-list {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .contact-info,
+      .order-form {
+        padding: 19px;
+      }
+
+      .footer-inner {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .footer-links {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<div class="top">منتوجات مجالية مغربية 🇲🇦 | دوار الوحدة، جماعة سيدي دحمان، تارودانت</div>
-<header>
-<nav class="container">
-<a class="brand" href="#home"><span class="logo">🐝</span><span><strong>ريماس سيفن</strong><small>التعاونية الفلاحية لتثمين المنتوجات المجالية</small></span></a>
-<div class="links"><a href="#home">الرئيسية</a><a href="#about">عن التعاونية</a><a href="#products">منتوجاتنا</a><a href="#contact">اتصل بنا</a></div>
-<a class="btn nav-btn" href="#products">اكتشف المنتوجات</a>
-</nav>
-</header>
-<main>
-<section class="hero" id="home"><div class="container hero-grid">
-<div><span class="tag">🌿 جودة محلية • نكهة مغربية أصيلة</span><h1>من خيرات أرضنا،<br><span>إلى مائدتكم بكل محبة</span></h1><p>مرحبا بكم في ريماس سيفن، تعاونية فلاحية من سيدي دحمان بتارودانت، نهتم بتثمين المنتوجات المجالية وتقديم اختيارات متنوعة من الأملو والمنتوجات الطبيعية.</p><div class="actions"><a class="btn red" href="#products">اكتشفوا منتوجاتنا</a><a class="btn white" href="https://wa.me/212615534425" target="_blank" rel="noopener">تواصل عبر واتساب</a></div></div>
-<div class="hero-card"><h2>🐝 ريماس سيفن</h2><p>أصالة مغربية واهتمام بالمنتوجات المجالية، مع تواصل مباشر لتسهيل الطلب والاستفسار.</p><div class="stats"><div class="stat"><b>محلي</b><small>من تارودانت</small></div><div class="stat"><b>متنوع</b><small>منتوجات مختلفة</small></div><div class="stat"><b>مباشر</b><small>طلب عبر واتساب</small></div></div></div>
-</div></section>
-<section id="about"><div class="container"><div class="heading"><span>شكون حنا؟</span><h2>على تعاونية ريماس سيفن</h2><p>تعاونية فلاحية كتطمح تساهم في تثمين المنتوجات المجالية والتعريف بالخيرات المحلية.</p></div><div class="about-grid"><div class="panel"><h3>قريبين من الأرض، وقريبين منكم</h3><p>التعاونية الفلاحية ريماس سيفن لتثمين المنتوجات المجالية، مقرها بدوار الوحدة، جماعة سيدي دحمان، إقليم تارودانت. كنطمحو نقدمو منتوجات متنوعة تناسب الأذواق والاستعمالات المختلفة.</p><ul><li>منتوجات مجالية مغربية متنوعة</li><li>أحجام وأثمنة واضحة للاختيار</li><li>سهولة الاستفسار والطلب عبر واتساب</li><li>تواصل مباشر بخصوص التوفر والتوصيل</li></ul><a class="btn" href="#contact">تواصلوا معنا</a></div><div class="seal-area"><div class="seal">🐝<div><b>ريماس سيفن</b><span>منتوجات مجالية</span><br><small>تارودانت • المغرب</small></div></div></div></div></div></section>
-<section class="products" id="products"><div class="container"><div class="heading"><span>اختاروا المفضل عندكم</span><h2>منتوجاتنا</h2><p>اختار المنتوج والحجم المناسب ليك، وضغط على الطلب باش تتواصل معنا عبر واتساب.</p></div><div class="filters"><button class="filter active" data-filter="all">الكل</button><button class="filter" data-filter="amlou">الأملو</button><button class="filter" data-filter="nuts">زبدة ومكسرات</button><button class="filter" data-filter="oil">الزيوت</button><button class="filter" data-filter="other">منتوجات أخرى</button></div><div class="grid" id="productGrid"></div><p class="note">الأثمنة بالدرهم المغربي. التوفر والتوصيل كيتأكدوا مباشرة مع التعاونية عبر واتساب.</p></div></section>
-<section><div class="container"><div class="heading"><span>علاش ريماس سيفن؟</span><h2>قيمنا في كل تعامل</h2><p>كنهتمو بالوضوح، التواصل والثقة مع كل زبون.</p></div><div class="values"><article class="value"><h3>🌿 تثمين المنتوجات المحلية</h3><p>الاهتمام بالمنتوجات المجالية والتعريف بها ضمن اختيارات متنوعة.</p></article><article class="value"><h3>🤝 تواصل مباشر</h3><p>تقدر تسولنا على المنتوج والحجم والتوفر قبل تأكيد الطلب.</p></article><article class="value"><h3>🇲🇦 هوية مغربية</h3><p>تعاونية من منطقة تارودانت، كتعتز بالمنتوجات المحلية وبالأصالة المغربية.</p></article></div></div></section>
-<section class="contact" id="contact"><div class="container"><div class="heading"><span>مرحبا بتواصلكم</span><h2>تواصلوا معانا</h2><p>عمر المعلومات وغادي يتحل واتساب برسالتك.</p></div><div class="contact-grid"><div class="contact-card"><h3>معلومات التعاونية</h3><div class="contact-line">📍 <b>العنوان:</b><br>دوار الوحدة، جماعة سيدي دحمان، تارودانت، المغرب</div><div class="contact-line">📱 <b>الهاتف وواتساب:</b><br><a href="https://wa.me/212615534425">06 15 53 44 25</a></div><div class="contact-line">التعاونية الفلاحية ريماس سيفن لتثمين المنتوجات المجالية</div><a class="btn red" style="margin-top:18px" href="https://wa.me/212615534425" target="_blank" rel="noopener">فتح واتساب مباشرة</a></div>
-<form class="form" id="orderForm"><h3>طلب أو استفسار</h3><label for="customer">الاسم</label><input id="customer" required placeholder="الاسم ديالك"><label for="phone">رقم الهاتف (اختياري)</label><input id="phone" type="tel" placeholder="06xxxxxxxx"><label for="chosen">المنتوج</label><select id="chosen"><option value="">اختار المنتوج</option></select><label for="size">الحجم</label><select id="size"><option value="">اختار الحجم</option></select><label for="quantity">الكمية</label><input id="quantity" type="number" min="1" value="1" required><label for="notes">ملاحظات (اختياري)</label><textarea id="notes" placeholder="المدينة أو تفاصيل إضافية"></textarea><button class="btn" type="submit">إرسال الطلب عبر واتساب ↗</button></form>
-</div></div></section>
-</main>
-<footer><b>ريماس سيفن</b> — التعاونية الفلاحية لتثمين المنتوجات المجالية<br>دوار الوحدة، جماعة سيدي دحمان، تارودانت، المغرب<br>© <span id="year"></span> جميع الحقوق محفوظة.</footer>
-<a class="whatsapp" href="https://wa.me/212615534425" target="_blank" rel="noopener">واتساب ☎</a>
-<script>
-const WHATSAPP='212615534425';
-const products=[
-{id:'a1',name:'أملو باللوز والعسل وزيت أركان',category:'amlou',icon:'🥜',desc:'مزيج اللوز والعسل وزيت أركان الغذائي.',sizes:[['250 غ',50],['500 غ',100],['1 كلغ',200]]},
-{id:'a2',name:'أملو باللوز والعسل (لايت)',category:'amlou',icon:'🌰',desc:'اختيار خفيف بمكونات اللوز والعسل.',sizes:[['250 غ',50],['500 غ',90],['1 كلغ',180]]},
-{id:'a3',name:'أملو باللوز والعسل وزيت الزيتون',category:'amlou',icon:'🫒',desc:'اللوز والعسل مع زيت الزيتون.',sizes:[['250 غ',30],['500 غ',55],['1 كلغ',110]]},
-{id:'a4',name:'أملو بالفول السوداني والعسل',category:'amlou',icon:'🥜',desc:'نكهة الفول السوداني مع العسل.',sizes:[['500 غ',25],['1 كلغ',50]]},
-{id:'a5',name:'أملو بالفول السوداني والعسل وزيت الزيتون',category:'amlou',icon:'🫒',desc:'الفول السوداني والعسل وزيت الزيتون.',sizes:[['500 غ',40],['1 كلغ',80]]},
-{id:'a6',name:'أملو اليقطين والعسل الطبيعي',category:'amlou',icon:'🎃',desc:'تركيبة متنوعة بنكهة اليقطين والعسل.',sizes:[['250 غ',60],['500 غ',110],['1 كلغ',220]]},
-{id:'a7',name:'أملو الكاجو بالعسل',category:'amlou',icon:'🌰',desc:'الكاجو مع العسل.',sizes:[['250 غ',60],['500 غ',110],['1 كلغ',220]]},
-{id:'n1',name:'زبدة الفول السوداني',category:'nuts',icon:'🥜',desc:'زبدة الفول السوداني للاستعمال اليومي.',sizes:[['200 غ',20],['500 غ',40],['1 كلغ',80]]},
-{id:'o1',name:'زيت أركان الغذائي',category:'oil',icon:'🫙',desc:'زيت أركان للاستعمال الغذائي.',sizes:[['250 مل',250],['500 مل',450],['1 لتر',700]]},
-{id:'o2',name:'زيت الزيتون',category:'oil',icon:'🫒',desc:'زيت الزيتون.',sizes:[['500 مل',25],['1 لتر',50]]},
-{id:'x1',name:'الزعفران',category:'other',icon:'🌺',desc:'أحجام متعددة من الزعفران.',sizes:[['1 غ',40],['2 غ',80],['5 غ',195],['10 غ',375]]}
-];
-const grid=document.getElementById('productGrid');
-const chosen=document.getElementById('chosen');
-const sizeSelect=document.getElementById('size');
-function renderProducts(filter='all'){
-const items=products.filter(p=>filter==='all'||p.category===filter);
-grid.innerHTML=items.map(p=>`<article class="product"><div class="product-top">${p.icon}</div><div class="product-body"><h3>${p.name}</h3><p>${p.desc}</p><div class="prices">${p.sizes.map(s=>`<span class="price">${s[0]}: <b>${s[1]} درهم</b></span>`).join('')}</div><button class="btn" type="button" data-order="${p.id}">اطلب هاد المنتوج</button></div></article>`).join('');
-grid.querySelectorAll('[data-order]').forEach(b=>b.addEventListener('click',()=>{chosen.value=b.dataset.order;updateSizes();document.getElementById('contact').scrollIntoView({behavior:'smooth'});}));
-}
-function updateSizes(){
-const p=products.find(x=>x.id===chosen.value);
-sizeSelect.innerHTML='<option value="">اختار الحجم</option>'+(p?p.sizes.map(s=>`<option value="${s[0]}" data-price="${s[1]}">${s[0]} — ${s[1]} درهم</option>`).join(''):'');
-}
-products.forEach(p=>chosen.add(new Option(p.name,p.id)));
-chosen.addEventListener('change',updateSizes);
-document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.toggle('active',x===b));renderProducts(b.dataset.filter);}));
-document.getElementById('orderForm').addEventListener('submit',e=>{
-e.preventDefault();
-const p=products.find(x=>x.id===chosen.value);
-const size=sizeSelect.value;
-const qty=document.getElementById('quantity').value;
-const price=p&&size?p.sizes.find(s=>s[0]===size)?.[1]:null;
-const msg=`السلام عليكم، بغيت نطلب من تعاونية ريماس سيفن.%0Aالاسم: ${encodeURIComponent(document.getElementById('customer').value)}%0Aالهاتف: ${encodeURIComponent(document.getElementById('phone').value||'غير محدد')}%0Aالمنتوج: ${encodeURIComponent(p?p.name:'استفسار عام')}%0Aالحجم: ${encodeURIComponent(size||'ما تحددش')}%0Aالكمية: ${encodeURIComponent(qty)}%0Aالثمن التقريبي: ${encodeURIComponent(price?price*Number(qty)+' درهم':'يحدد لاحقاً')}%0Aملاحظات: ${encodeURIComponent(document.getElementById('notes').value||'لا توجد')}`;
-window.open(`https://wa.me/${WHATSAPP}?text=${msg}`,'_blank');
-});
-document.getElementById('year').textContent=new Date().getFullYear();
-renderProducts();
-</script>
+
+  <div class="topbar">
+    منتوجات مجالية مغربية • ريماس سيفن • تارودانت
+  </div>
+
+  <header>
+    <div class="container navbar">
+      <a class="brand" href="#home" aria-label="ريماس سيفن - الرئيسية">
+        <div class="brand-symbol">🐝</div>
+        <div>
+          <div class="brand-name">ريماس <span>سيفن</span></div>
+          <div class="brand-sub">تثمين المنتوجات المجالية</div>
+        </div>
+      </a>
+
+      <nav aria-label="القائمة الرئيسية">
+        <a href="#home">الرئيسية</a>
+        <a href="#about">من نحن</a>
+        <a href="#products">منتوجاتنا</a>
+        <a href="#values">قيمنا</a>
+        <a href="#contact">اتصل بنا</a>
+      </nav>
+
+      <a class="btn btn-green" href="#products">اكتشف المنتوجات</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <span class="eyebrow">من خيرات أرضنا المغربية</span>
+          <h1>ريماس سيفن،<br><span>نكهة الطبيعة وأصالة المغرب</span></h1>
+          <p>
+            مرحباً بكم في عالم المنتوجات المجالية. نعمل على تثمين خيرات منطقتنا
+            وتقديم اختيارات متنوعة من الأملو والمنتوجات الغذائية الأصيلة.
+            اكتشفوا منتوجاتنا وتواصلوا معنا لطلب ما يناسبكم.
+          </p>
+          <div class="hero-buttons">
+            <a class="btn btn-red" href="#products">تصفح المنتوجات ←</a>
+            <a class="btn btn-outline" href="#about">اكتشف التعاونية</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="trust-strip">
+        <div class="trust-item">
+          <strong>🌿 منتوجات مجالية</strong>
+          <span>اهتمام بخيرات المنطقة</span>
+        </div>
+        <div class="trust-item">
+          <strong>🤝 روح التعاون</strong>
+          <span>تعاونية فلاحية مغربية</span>
+        </div>
+        <div class="trust-item">
+          <strong>📦 طلب مباشر</strong>
+          <span>تواصل معنا عبر واتساب</span>
+        </div>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="container about-grid">
+        <div class="about-photo">
+          <img
+            src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1000&q=85"
+            alt="مناظر طبيعية وخيرات الأرض"
+            loading="lazy">
+        </div>
+
+        <div class="about-text">
+          <span class="eyebrow" style="color:var(--red);border-color:var(--border);background:var(--green-light)">
+            حكايتنا
+          </span>
+          <h2>تعاونية ريماس سيفن لتثمين المنتوجات المجالية</h2>
+          <p>
+            نحن التعاونية الفلاحية ريماس سيفن لتثمين المنتوجات المجالية،
+            الكائنة بدوار الوحدة، جماعة سيدي دحمان، إقليم تارودانت، المغرب.
+          </p>
+          <p>
+            نطمح إلى المساهمة في تثمين المنتوجات المحلية وتطوير تسويقها،
+            مع تقديم تشكيلة متنوعة من الأملو وبعض المنتوجات الغذائية الأخرى.
+          </p>
+          <p>
+            هدفنا هو التعريف بمنتوجاتنا وتقريبها من الزبناء، وفتح باب التواصل
+            مع الأفراد والمحلات التجارية وكل من يهتم بالمنتوجات المجالية.
+          </p>
+
+          <div class="feature-list">
+            <div class="feature">🌱 تثمين المنتوج المحلي</div>
+            <div class="feature">🍯 تنوع المنتوجات</div>
+            <div class="feature">📍 من تارودانت</div>
+            <div class="feature">🤝 التواصل المباشر</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="products-section" id="products">
+      <div class="container">
+        <div class="section-heading">
+          <span class="overline">اكتشف تشكيلتنا</span>
+          <h2>منتوجات ريماس سيفن</h2>
+          <p>
+            اختار المنتوج اللي بغيتي، شوف الأحجام والأثمنة، وصيفط لينا طلبك
+            عبر واتساب.
+          </p>
+        </div>
+
+        <div class="filters" aria-label="تصفية المنتوجات">
+          <button class="filter-btn active" data-filter="all">جميع المنتوجات</button>
+          <button class="filter-btn" data-filter="amlo">الأملو</button>
+          <button class="filter-btn" data-filter="spreads">الزبدة</button>
+          <button class="filter-btn" data-filter="oils">الزيوت</button>
+          <button class="filter-btn" data-filter="other">منتوجات أخرى</button>
+        </div>
+
+        <div class="product-grid">
+
+          <article class="product" data-category="amlo">
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1505576633757-0ac1084af824?auto=format&fit=crop&w=800&q=80" alt="أملو باللوز والعسل وزيت أركان" loading="lazy">
+              <span class="product-tag">اختيار مميز</span>
+            </div>
+            <div class="product-body">
+              <h3>أملو باللوز والعسل وزيت أركان</h3>
+              <p class="product-desc">خليط غني يجمع اللوز والعسل وزيت أركان.</p>
+              <div class="price-list">
+                <div class="price-row"><span>250 غرام</span><strong>50 درهم</strong></div>
+                <div class="price-row"><span>500 غرام</span><strong>100 درهم</strong></div>
+                <div class="price-row"><span>1 كيلوغرام</span><strong>200 درهم</strong></div>
+              </div>
+              <button class="btn btn-green order-btn" data-product="أملو باللوز والعسل وزيت أركان">اطلب عبر واتساب</button>
+            </div>
+          </article>
+
+          <article class="product" data-category="amlo">
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80" alt="أملو باللوز والعسل لايت" loading="lazy">
+              <span class="product-tag">متنوع</span>
+            </div>
+            <div class="product-body">
+              <h3>أملو باللوز والعسل لايت</h3>
+              <p class="product-desc">اختيار آخر من الأملو باللوز والعسل.</p>
+              <div class="price-list">
+                <div class="price-row"><span>250 غرام</span><strong>50 درهم</strong></div>
+                <div class="price-row"><span>500 غرام</span><strong>90 درهم</strong></div>
+                <div class="price-row"><span>1 كيلوغرام</span><strong>180 درهم</strong></div>
+              </div>
+              <button class="btn btn-green order-btn" data-product="أملو باللوز والعسل لايت">اطلب عبر واتساب</button>
+            </div>
+          </article>
+
+          <article class="product" data-category="amlo">
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=800&q=80" alt="أملو باللوز والعسل وزيت الزيتون" loading="lazy">
+            </div>
+            <div class="product-body">
+              <h3>أملو باللوز والعسل وزيت الزيتون</h3>
+              <p class="product-desc">تركيبة متنوعة من اللوز والعسل وزيت الزيتون.</p>
+              <div class="price-list">
+                <div class="price-row"><span>250 غرام</span><strong>30 درهم</strong></div>
+                <div class="price-row"><span>500 غرام</span><strong>55 درهم</strong></div>
+                <div class="price-row"><span>1 كيلوغرام</span><strong>110 درهم</strong></div>
+              </div>
+              <button class="btn btn-green order-btn" data-product="أملو باللوز والعسل وزيت الزيتون">اطلب عبر واتساب</button>
+            </div>
+          </article>
+
+          <article class="product" data-category="amlo">
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1599599810694-b5ac4dd5f3f8?auto=format&fit=crop&w=800&q=80" alt="أملو بالفول السوداني والعسل" loading="lazy">
+            </div>
+            <div class="product-body">
+              <h3>أملو بالفول السوداني والعسل</h3>
+              <p class="product-desc">اختيار اقتصادي لمحبي مذاق الفول السوداني والعسل.</p>
+              <div class="price-list">
+                <div class="price-row"><span>500 غرام</span><strong>25 درهم</strong></div>
+                <div class="price-row"><span>1 كيلوغرام</span><strong>50 درهم</strong></div>
+              </div>
+              <button class="btn btn-green order-btn" data-product="أملو بالفول السوداني والعسل">اطلب عبر واتساب</button>
+            </div>
+          </article>
+
+          <article class="product" data-category="amlo">
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80" alt="أملو بالفول السوداني والعسل وزيت الزيتون" loading="lazy">
+            </div>
+            <div class="product-body">
+              <h3>أملو بالفول السوداني والعسل وزيت الزيتون</h3>
+              <p class="product-desc">مزيج من الفول السوداني والعسل وزيت الزيتون.</p>
+              <div class="price-list">
+                <div class="price-row"><span>500 غرام</span><strong>40 درهم</strong></div>
+                <div class="price-row"><span>1 كيلوغرام</span><strong>80 درهم</strong></div>
+              </div>
+              <button class="btn btn-green order-btn" data-product="أملو بالفول السوداني والعسل وزيت الزيتون">اطلب عبر واتساب</button>
+            </div>
+          </article>
+
+          <article class="product" data-category="amlo">
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1571115764595-644a1f56a55c?auto=format&fit=crop&w=800&q=80" alt="أملو اليقطين والعسل الطبيعي" loading="lazy">
+            </div>
+            <div class="product-body">
+              <h3>أملو اليقطين والعسل الطبيعي</h3>
+              <p class="product-desc">نوع متنوع ضمن تشكيلة الأملو.</p>
+              <div class="price-list">
+                <div class="price-row"><span>250 غرام</span><strong>60 درهم</strong></div>
+                <div class="price-row"><span>500 غرام</span><strong>110 درهم</strong></div>
+                <div class="price-row"><span>1 كيلوغرام</span><strong>220 درهم</strong></div>
+              </div>
+              <button class="btn btn-green order-btn" data-product="أملو اليقطين والعسل الطبيعي">اطلب عبر واتساب</button>
+            </div>
+          </article>
+
+          <article class="product" data-category="amlo">
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80" alt="أملو الكاجو بالعسل" loading="lazy">
+            </div>
+            <div class="product-body">
+              <h3>أملو الكاجو بالعسل</h3>
+              <p class="product-desc">اختيار آخر لعشاق المكسرات والعسل.</p>
+              <div class="price-list">
+                <div class="price-row"><span>250 غرام</span><strong>60 درهم</strong></div>
+                <div class="price-row"><span>500 غرام</span><strong>110 درهم</strong></div>
+                <div class="price-row"><span>1 كيلوغرام</span><strong>220 درهم</strong></div>
+              </div>
+              <button class="btn btn-green order-btn" data-product="أملو الكاجو بالعسل">اطلب عبر واتساب</button>
+            </div>
+          </article>
+
+          <article class="product" data-category="spreads">
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1587049352846-4a222e784d38?auto=format&fit=crop&w=800&q=80" alt="زبدة الفول السوداني" loading="lazy">
+            </div>
+            <div class="product-body">
+              <h3>زبدة الفول السوداني</h3>
+              <p class="product-desc">زبدة الفول السوداني ضمن تشكيلتنا الغذائية.</p>
+              <div class="price-list">
+                <div class="price-row"><span>200 غرام</span><strong>20 درهم</strong></div>
+                <div class="price-row"><span>500 غرام</span><strong>40 درهم</strong></div>
+                <div class="price-row"><span>1 كيلوغرام</span><strong>80 درهم</strong></div>
+              </div>
+              <button class="btn btn-green order-btn" data-product="زبدة الفول السوداني">اطلب عبر واتساب</button>
+            </div>
+          </article>
+
+          <article class="product" data-category="other">
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80" alt="الزعفران" loading="lazy">
+              <span class="product-tag">منتوج مجالي</span>
+            </div>
+            <div class="product-body">
+              <h3>الزعفران</h3>
+              <p class="product-desc">الزعفران ضمن قائمة المنتوجات المعروضة.</p>
+              <div class="price-list">
+                <div class="price-row"><span>1 غرام</span><strong>40 درهم</strong></div>
+                <div class="price-row"><span>2 غرام</span><strong>80 درهم</strong></div>
+                <div class="price-row"><span>5 غرامات</span><strong>195 درهم</strong></div>
+                <div class="price-row"><span>10 غرامات</span><strong>375 درهم</strong></div>
+              </div>
+              <button class="btn btn-green order-btn" data-product="الزعفران">اطلب عبر واتساب</button>
+            </div>
+          </article>
+
+          <article class="product" data-category="oils">
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=800&q=80" alt="زيت أركان الغذائي" loading="lazy">
+            </div>
+            <div class="product-body">
+              <h3>زيت أركان الغذائي</h3>
+              <p class="product-desc">زيت أركان الغذائي بأحجام مختلفة.</p>
+              <div class="price-list">
+                <div class="price-row"><span>250 ملل</span><strong>250 درهم</strong></div>
+                <div class="price-row"><span>500 ملل</span><strong>450 درهم</strong></div>
+                <div class="price-row"><span>1 لتر</span><strong>700 درهم</strong></div>
+              </div>
+              <button class="btn btn-green order-btn" data-product="زيت أركان الغذائي">استفسر واطلب</button>
+            </div>
+          </article>
+
+          <article class="product" data-category="oils">
+            <div class="product-image">
+              <img src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=800&q=80" alt="زيت الزيتون" loading="lazy">
+            </div>
+            <div class="product-body">
+              <h3>زيت الزيتون</h3>
+              <p class="product-desc">زيت الزيتون بأحجام مناسبة للاستعمال اليومي.</p>
+              <div class="price-list">
+                <div class="price-row"><span>500 ملل</span><strong>25 درهم</strong></div>
+                <div class="price-row"><span>1 لتر</span><strong>50 درهم</strong></div>
+              </div>
+              <button class="btn btn-green order-btn" data-product="زيت الزيتون">استفسر واطلب</button>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="note">
+          الأثمنة المعروضة بالدرهم المغربي. تأكد من توفر المنتوج والثمن النهائي
+          ومصاريف التوصيل عند التواصل مع التعاونية.
+        </p>
+      </div>
+    </section>
+
+    <section id="values">
+      <div class="container">
+        <div class="section-heading">
+          <span class="overline">شنو كيميزنا؟</span>
+          <h2>قيم تعاونية ريماس سيفن</h2>
+          <p>كنطمحو نطورو منتوجاتنا ونقربوها من الزبناء بطريقة واضحة وسهلة.</p>
+        </div>
+
+        <div class="values-grid">
+          <div class="value-card">
+            <div class="value-icon">🌿</div>
+            <h3>تثمين المنتوجات المجالية</h3>
+            <p>الاهتمام بالمنتوجات المحلية والتعريف بها وبإمكانياتها.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">🫙</div>
+            <h3>تنوع الاختيارات</h3>
+            <p>تشكيلة من الأملو والزيوت وبعض المنتوجات الغذائية الأخرى.</p>
+          </div>
+          <div class="value-card">
+            <div class="value-icon">🤝</div>
+            <h3>التواصل مع الزبناء</h3>
+            <p>تسهيل الاستفسار عن المنتوجات والأحجام والأثمنة والطلبات.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <span class="overline" style="color:#f5c8b9">مرحبا بتواصلكم</span>
+          <h2>تواصلوا مع ريماس سيفن</h2>
+          <p>عندك شي سؤال أو بغيتي تطلب شي منتوج؟ تواصل معنا مباشرة.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3>معلومات التعاونية</h3>
+
+            <div class="contact-line">
+              <small>اسم التعاونية</small>
+              التعاونية الفلاحية ريماس سيفن لتثمين المنتوجات المجالية
+            </div>
+
+            <div class="contact-line">
+              <small>العنوان</small>
+              دوار الوحدة، جماعة سيدي دحمان، تارودانت، المغرب
+            </div>
+
+            <div class="contact-line">
+              <small>الهاتف وواتساب</small>
+              <a href="https://wa.me/212615534425" target="_blank" rel="noopener noreferrer">+212 615 534 425</a>
+            </div>
+
+            <div class="contact-line">
+              <small>الطلبات والاستفسارات</small>
+              تواصل معنا لمعرفة التوفر والثمن النهائي والتوصيل.
+            </div>
+
+            <a class="btn btn-red" style="margin-top:18px;width:100%" href="https://wa.me/212615534425?text=السلام%20عليكم،%20بغيت%20معلومات%20على%20منتوجات%20ريماس%20سيفن" target="_blank" rel="noopener noreferrer">
+              راسلنا مباشرة عبر واتساب
+            </a>
+          </div>
+
+          <form class="order-form" id="orderForm">
+            <h3>صيفط طلبك</h3>
+            <p class="form-intro">عمر المعلومات وغادي يتحل واتساب برسالة الطلب ديالك.</p>
+
+            <div class="field">
+              <label for="customerName">الاسم ديالك</label>
+              <input id="customerName" name="name" type="text" placeholder="دخل الاسم ديالك" required>
+            </div>
+
+            <div class="field">
+              <label for="customerPhone">رقم الهاتف</label>
+              <input id="customerPhone" name="phone" type="tel" placeholder="رقم الهاتف ديالك" required>
+            </div>
+
+            <div class="field">
+              <label for="productSelect">اختار المنتوج</label>
+              <select id="productSelect" name="product" required>
+                <option value="">-- اختار المنتوج --</option>
+                <option>أملو باللوز والعسل وزيت أركان</option>
+                <option>أملو باللوز والعسل لايت</option>
+                <option>أملو باللوز والعسل وزيت الزيتون</option>
+                <option>أملو بالفول السوداني والعسل</option>
+                <option>أملو بالفول السوداني والعسل وزيت الزيتون</option>
+                <option>أملو اليقطين والعسل الطبيعي</option>
+                <option>أملو الكاجو بالعسل</option>
+                <option>زبدة الفول السوداني</option>
+                <option>الزعفران</option>
+                <option>زيت أركان الغذائي</option>
+                <option>زيت الزيتون</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="productSize">الحجم أو الكمية</label>
+              <input id="productSize" name="size" type="text" placeholder="مثلاً: 500 غرام، جوج علب">
+            </div>
+
+            <div class="field">
+              <label for="customerAddress">عنوان التوصيل</label>
+              <input id="customerAddress" name="address" type="text" placeholder="المدينة والحي أو الدوار">
+            </div>
+
+            <div class="field">
+              <label for="customerNotes">ملاحظات إضافية</label>
+              <textarea id="customerNotes" name="notes" placeholder="أي معلومات أخرى بغيتي تزيدها"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-green">إرسال الطلب عبر واتساب</button>
+            <p class="form-message">إرسال الطلب ما كيعنيش تأكيده تلقائياً؛ التعاونية غادي تتواصل معاك للتأكيد.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>ريماس سيفن</strong>
+        <p>تثمين المنتوجات المجالية • تارودانت، المغرب</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#home">الرئيسية</a>
+        <a href="#products">المنتوجات</a>
+        <a href="#about">من نحن</a>
+        <a href="#contact">اتصل بنا</a>
+      </div>
+
+      <p>© <span id="year"></span> ريماس سيفن. جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/212615534425" target="_blank" rel="noopener noreferrer" aria-label="تواصل عبر واتساب">
+    ☎ واتساب
+  </a>
+
+  <script>
+    const whatsappNumber = "212615534425";
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // تصفية المنتوجات حسب الصنف
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const products = document.querySelectorAll(".product");
+
+    filterButtons.forEach(function(button) {
+      button.addEventListener("click", function() {
+        filterButtons.forEach(function(item) {
+          item.classList.remove("active");
+        });
+
+        button.classList.add("active");
+        const filter = button.dataset.filter;
+
+        products.forEach(function(product) {
+          const category = product.dataset.category;
+          product.classList.toggle(
+            "hidden",
+            filter !== "all" && category !== filter
+          );
+        });
+      });
+    });
+
+    // أزرار الطلب الموجودة تحت كل منتوج
+    document.querySelectorAll(".order-btn").forEach(function(button) {
+      button.addEventListener("click", function() {
+        const productName = button.dataset.product;
+        document.getElementById("productSelect").value = productName;
+        document.getElementById("contact").scrollIntoView({
+          behavior: "smooth"
+        });
+      });
+    });
+
+    // إرسال الطلب إلى واتساب
+    document.getElementById("orderForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const name = document.getElementById("customerName").value.trim();
+      const phone = document.getElementById("customerPhone").value.trim();
+      const product = document.getElementById("productSelect").value;
+      const size = document.getElementById("productSize").value.trim();
+      const address = document.getElementById("customerAddress").value.trim();
+      const notes = document.getElementById("customerNotes").value.trim();
+
+      if (!name || !phone || !product) {
+        alert("عافاك عمر الاسم ورقم الهاتف واختار المنتوج.");
+        return;
+      }
+
+      const message =
+        "السلام عليكم، بغيت ندير طلب من تعاونية ريماس سيفن.\n\n" +
+        "الاسم: " + name + "\n" +
+        "رقم الهاتف: " + phone + "\n" +
+        "المنتوج: " + product + "\n" +
+        "الحجم أو الكمية: " + (size || "لم يحدد") + "\n" +
+        "عنوان التوصيل: " + (address || "لم يحدد") + "\n" +
+        "ملاحظات: " + (notes || "لا توجد") + "\n\n" +
+        "عافاكم أكدوا ليا التوفر والثمن ومصاريف التوصيل.";
+
+      const url = "https://wa.me/" + whatsappNumber + "?text=" +
+        encodeURIComponent(message);
+
+      window.open(url, "_blank", "noopener,noreferrer");
+    });
+  </script>
+
 </body>
 </html>
