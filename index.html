@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#286b45">
+<meta name="description" content="ريماس سيفن، تعاونية فلاحية لتثمين المنتوجات المجالية بسيدي دحمان تارودانت.">
+<title>ريماس سيفن | Rimas Seven</title>
+<style>
+:root{--green:#286b45;--red:#c94747;--cream:#fffaf0;--ink:#24352a}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Tahoma,sans-serif;background:var(--cream);color:var(--ink);line-height:1.8}
+header{background:white;text-align:center;padding:25px 15px;border-bottom:4px solid var(--red)}
+.logo{width:82px;height:82px;border:3px solid var(--green);border-radius:50%;display:grid;place-items:center;font-size:39px;margin:auto}
+header h1{color:var(--green);margin:8px 0 0;font-size:29px}
+header p{margin:0;color:#666}
+nav{background:var(--green);padding:10px;text-align:center;position:sticky;top:0;z-index:2}
+nav a{color:white;text-decoration:none;margin:0 10px;white-space:nowrap}
+.hero{padding:45px 18px;text-align:center;background:linear-gradient(135deg,#e7f2e6,#fff4e7)}
+.hero h2{color:var(--green);font-size:27px;margin:0}
+.hero p{max-width:650px;margin:12px auto}
+.btn{display:inline-block;background:var(--green);color:white;padding:10px 18px;border-radius:9px;text-decoration:none;border:0;font-size:15px;cursor:pointer}
+section{padding:28px 15px;max-width:1100px;margin:auto}
+h2.section-title{text-align:center;color:var(--green)}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
+.card{background:white;border:1px solid #e8e4d9;border-radius:14px;padding:17px;box-shadow:0 3px 12px #00000008}
+.pic{font-size:48px;text-align:center;background:#f4f5e9;border-radius:10px;padding:12px}
+.card h3{color:var(--green);font-size:18px;line-height:1.5}
+.card p{font-size:14px;color:#666}
+label{display:block;font-size:14px;margin-top:8px}
+select,input{width:100%;padding:10px;border:1px solid #ccc;border-radius:7px;background:white;font-size:15px}
+.price{font-weight:bold;color:var(--red);font-size:19px;margin:8px 0}
+.card .btn{width:100%;margin-top:10px}
+.about{background:#edf4eb;border-radius:14px;padding:22px}
+.note{font-size:13px;color:#777}
+footer{text-align:center;background:#214e35;color:white;padding:25px 12px}
+footer a{color:white}
+.lang{direction:ltr}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">🐝</div>
+<h1>ريماس سيفن</h1>
+<p>التعاونية الفلاحية لتثمين المنتوجات المجالية</p>
+<p class="lang">Rimas Seven — Produits du terroir</p>
+</header>
+
+<nav>
+<a href="#home">الرئيسية</a>
+<a href="#products">منتوجاتنا</a>
+<a href="#about">من نحن</a>
+<a href="#contact">اتصل بنا</a>
+</nav>
+
+<div class="hero" id="home">
+<h2>الذوق الأصيل من أرضنا إلى مائدتكم 🌿</h2>
+<p>مرحبا بكم في ريماس سيفن، تعاونية فلاحية تهتم بتثمين المنتوجات المجالية وتقديم منتجات متنوعة لمحبي المذاق الأصيل.</p>
+<a class="btn" href="#products">اكتشفوا منتوجاتنا</a>
+</div>
+
+<section id="products">
+<h2 class="section-title">منتوجاتنا | Nos produits</h2>
+<div class="products" id="product-list"></div>
+</section>
+
+<section id="about">
+<div class="about">
+<h2>من نحن؟</h2>
+<p>التعاونية الفلاحية ريماس سيفن لتثمين المنتوجات المجالية، توجد بدوار الوحدة، جماعة سيدي دحمان، إقليم تارودانت، المغرب.</p>
+<p>نسعى إلى تثمين المنتوجات المحلية وتطوير عرض متنوع يلائم أذواق زبنائنا.</p>
+<hr>
+<h3 class="lang">Qui sommes-nous ?</h3>
+<p class="lang">Rimas Seven est une coopérative agricole dédiée à la valorisation des produits du terroir, située à Douar Al Wahda, commune de Sidi Dahmane, province de Taroudant, Maroc.</p>
+</div>
+</section>
+
+<section id="contact">
+<h2 class="section-title">الطلب والتواصل</h2>
+<div class="card" style="text-align:center">
+<p>للطلب أو للاستفسار عن المنتجات، تواصلوا معنا عبر واتساب.</p>
+<p><strong>الهاتف والواتساب:</strong> 0615534425</p>
+<a class="btn" href="https://wa.me/212615534425" target="_blank" rel="noopener">تواصل معنا عبر واتساب</a>
+<p class="note">يمكنكم إرسال اسم المنتج والوزن والكمية لتأكيد الطلب.</p>
+</div>
+</section>
+
+<footer>
+<strong>ريماس سيفن | Rimas Seven</strong>
+<p>دوار الوحدة، جماعة سيدي دحمان، تارودانت — المغرب</p>
+<p>© <span id="year"></span> Rimas Seven</p>
+</footer>
+
+<script>
+const products = [
+{name:"أملو باللوز والعسل وزيت أركان",fr:"Amlou amandes, miel et huile d'argan",icon:"🥜",sizes:[[250,50],[500,100],[1000,200]]},
+{name:"أملو باللوز والعسل (لايت)",fr:"Amlou amandes et miel",icon:"🍯",sizes:[[250,50],[500,90],[1000,180]]},
+{name:"أملو باللوز والعسل وزيت الزيتون",fr:"Amlou amandes, miel et huile d'olive",icon:"🫒",sizes:[[250,30],[500,55],[1000,110]]},
+{name:"أملو بالفول السوداني والعسل",fr:"Amlou cacahuètes et miel",icon:"🥜",sizes:[[500,25],[1000,50]]},
+{name:"أملو بالفول السوداني والعسل وزيت الزيتون",fr:"Amlou cacahuètes, miel et huile d'olive",icon:"🫒",sizes:[[500,40],[1000,80]]},
+{name:"أملو اليقطين والعسل الطبيعي",fr:"Amlou graines de courge et miel",icon:"🎃",sizes:[[250,60],[500,110],[1000,220]]},
+{name:"أملو الكاجو بالعسل",fr:"Amlou noix de cajou et miel",icon:"🌰",sizes:[[250,60],[500,110],[1000,220]]},
+{name:"زبدة الفول السوداني",fr:"Beurre de cacahuètes",icon:"🥜",sizes:[[200,20],[500,40],[1000,80]]},
+{name:"الزعفران",fr:"Safran",icon:"🌺",sizes:[[1,40],[2,80],[5,195],[10,375]],unit:"g"},
+{name:"زيت أركان الغذائي",fr:"Huile d'argan alimentaire",icon:"🫙",sizes:[[250,250],[500,450],[1000,700]],unit:"ml",indicative:true},
+{name:"زيت الزيتون",fr:"Huile d'olive",icon:"🫒",sizes:[[500,25],[1000,50]],unit:"ml",indicative:true}
+];
+
+const list=document.getElementById("product-list");
+products.forEach((p,i)=>{
+const card=document.createElement("article");
+card.className="card";
+const unit=p.unit||"g";
+const options=p.sizes.map(s=>`<option value="${s[0]}" data-price="${s[1]}">${s[0]>=1000?(s[0]/1000)+" kg":s[0]+" "+unit} — ${s[1]} DH</option>`).join("");
+card.innerHTML=`<div class="pic">${p.icon}</div>
+<h3>${p.name}</h3><p class="lang">${p.fr}</p>
+${p.indicative?'<p class="note">ثمن إرشادي قابل للتعديل والتأكيد قبل الطلب.</p>':''}
+<label for="size${i}">اختيار الوزن أو الحجم</label>
+<select id="size${i}">${options}</select>
+<label for="qty${i}">الكمية</label>
+<input id="qty${i}" type="number" min="1" step="1" value="1">
+<div class="price" id="price${i}"></div>
+<button class="btn" type="button" id="order${i}">اطلب عبر واتساب</button>`;
+list.appendChild(card);
+const size=card.querySelector("select");
+const qty=card.querySelector("input");
+const price=card.querySelector(".price");
+function update(){
+const selected=size.options[size.selectedIndex];
+price.textContent=(Number(selected.dataset.price)*Math.max(1,Number(qty.value)||1))+" DH";
+}
+size.addEventListener("change",update);
+qty.addEventListener("input",update);
+update();
+card.querySelector("button").addEventListener("click",()=>{
+const selected=size.options[size.selectedIndex];
+const quantity=Math.max(1,Math.floor(Number(qty.value)||1));
+const weight=Number(selected.value);
+const label=weight>=1000?(weight/1000)+" kg":weight+" "+unit;
+const total=Number(selected.dataset.price)*quantity;
+const message=`السلام عليكم، بغيت نطلب من تعاونية ريماس سيفن:\nالمنتج: ${p.name}\nالوزن/الحجم: ${label}\nالكمية: ${quantity}\nالمجموع التقريبي: ${total} درهم\nالمرجو تأكيد الطلب والثمن والتوصيل.`;
+window.open("https://wa.me/212615534425?text="+encodeURIComponent(message),"_blank");
+});
+});
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
